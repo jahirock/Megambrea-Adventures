@@ -38,6 +38,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackgroundWater
+    uniqueID: 2945852853
+    locked: 0
+  - name: Background
+    uniqueID: 4089276891
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Middleground
+    uniqueID: 782122843
+    locked: 0
+  - name: Foreground
+    uniqueID: 3748512419
+    locked: 0
+  - name: Player
+    uniqueID: 731866537
     locked: 0
