@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 80
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -119,18 +119,18 @@ TextureImporter:
       name: coin
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 8
+        y: 4
+        width: 14
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e98bb90d744d53e48a5c4e1e24e8456e
+      spriteID: 3fb7e9a8d3525d5488497b5a0396c3e2
       internalID: -5138717
       vertices: []
       indices: 
@@ -140,18 +140,18 @@ TextureImporter:
       name: potion
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
+        x: 38
+        y: 4
+        width: 19
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 964f8d58ecb34c0429cb11b4074926e6
+      spriteID: 17f1c33b27c18bb488943c3d75dd9e39
       internalID: 1341737241
       vertices: []
       indices: 
@@ -161,18 +161,18 @@ TextureImporter:
       name: sword
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 69
+        y: 6
+        width: 23
+        height: 23
+      alignment: 9
+      pivot: {x: 0.15372002, y: 0.15371986}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9d2190349e8a7641a88d67f70279f2d
+      spriteID: 522ed2f40b1cfae4ebabb2c2705ac9f1
       internalID: -13917807
       vertices: []
       indices: 
@@ -182,18 +182,18 @@ TextureImporter:
       name: axe
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 101
+        y: 5
+        width: 26
+        height: 23
+      alignment: 9
+      pivot: {x: 0.19367541, y: 0.28357494}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62fc1ecdaea0a824eb8707cf0cc2ddce
+      spriteID: 1bdaf2c5f90f1ab438945583b3816c45
       internalID: -1911011390
       vertices: []
       indices: 
@@ -203,18 +203,18 @@ TextureImporter:
       name: staff
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 134
+        y: 5
+        width: 22
+        height: 23
+      alignment: 9
+      pivot: {x: 0.26080808, y: 0.24647348}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4693b5097622ab74091f51e2f871b3c9
+      spriteID: f1eef50684996f048b1a9b37c1ccf795
       internalID: -629294572
       vertices: []
       indices: 
