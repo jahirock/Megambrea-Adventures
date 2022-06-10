@@ -9,10 +9,16 @@ public class PlayerController : MonoBehaviour
     private const string lastHorizontal = "LastHorizontal";
     private const string lastVertical = "LastVertical";
     private const string walkingState = "Walking";
-    
+    private const string attackingState = "Attacking";
+
     public float speed = 4.0F;
+    private float currentSpeed;
     private bool walking = false;
+    private bool attacking = false;
     public Vector2 lastMovement = Vector2.zero;
+
+    public float attackingTime;
+    private float attackingTimeCounter; 
 
     private Animator animator;
     private Rigidbody2D playerRigidBody;
@@ -42,54 +48,38 @@ public class PlayerController : MonoBehaviour
     {
         walking = false;
 
-        if(Mathf.Abs(Input.GetAxisRaw(horizontal)) > 0.5F)
+        if(Input.GetMouseButtonDown(0))
         {
-            /*this.transform.Translate(
-                new Vector3(
-                    Input.GetAxisRaw(horizontal) * speed * Time.deltaTime, 
-                    0, 0
-                )
-            );*/
-            playerRigidBody.velocity = new Vector2(
-                Input.GetAxisRaw(horizontal) * speed, 
-                playerRigidBody.velocity.y
-            );
-            walking = true;
-            lastMovement = new Vector2(Input.GetAxisRaw(horizontal), 0);
+            attacking = true;
+            attackingTimeCounter = attackingTime;
+            playerRigidBody.velocity = Vector2.zero;
+            animator.SetBool(attackingState, attacking);
+        }
+
+        if(attacking)
+        {
+            attackingTimeCounter -= Time.deltaTime;
+            if(attackingTimeCounter < 0)
+            {
+                attacking = false;
+                animator.SetBool(attackingState, attacking);
+            }
         }
         else
         {
-            playerRigidBody.velocity = new Vector2(
-                0,
-                playerRigidBody.velocity.y
-            );
+            if (Mathf.Abs(Input.GetAxisRaw(horizontal)) > 0.5F || Mathf.Abs(Input.GetAxisRaw(vertical)) > 0.5F)
+            {
+                walking = true;
+                lastMovement = new Vector2(
+                    Input.GetAxisRaw(horizontal),
+                    Input.GetAxisRaw(vertical)
+                );
+                playerRigidBody.velocity = lastMovement.normalized * speed; //* Time.deltaTime;
+
+            }
         }
 
-        if (Mathf.Abs(Input.GetAxisRaw(vertical)) > 0.5F)
-        {
-            /*this.transform.Translate(
-                new Vector3(
-                    0,
-                    Input.GetAxisRaw(vertical) * speed * Time.deltaTime,
-                    0
-                )
-            );*/
-            playerRigidBody.velocity = new Vector2(
-                playerRigidBody.velocity.x,
-                Input.GetAxisRaw(vertical) * speed
-            );
-            walking = true;
-            lastMovement = new Vector2(0, Input.GetAxisRaw(vertical));
-        }
-        else
-        {
-            playerRigidBody.velocity = new Vector2(
-                playerRigidBody.velocity.x,
-                0
-            );
-        }
-
-        if(!walking)
+        if(!walking || attacking)
         {
             playerRigidBody.velocity = Vector2.zero;
         }
