@@ -177,6 +177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  bloodParticles: {fileID: 8406764691630677646, guid: c52c826aa89ebd446951eb4bc989c56e, type: 3}
+  damageNumber: {fileID: 8023960434070330380, guid: 8a016ce1f1216934f9ede118f071781a, type: 3}
 --- !u!114 &-5467250628306982533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,3 +193,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
+  flashActive: 0
+  flashLength: 0
+  expWhenDefeated: 10
