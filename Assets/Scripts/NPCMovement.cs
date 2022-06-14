@@ -5,7 +5,7 @@ using UnityEngine;
 public class NPCMovement : MonoBehaviour
 {
     public float npcSpeed = 1.5f;
-    public bool isWalking;
+    public bool isWalking, isTalking;
     public float walkTime = 1.5f;
     public float waitTime = 3.0f;
 
@@ -35,16 +35,27 @@ public class NPCMovement : MonoBehaviour
 
     public BoxCollider2D villagerZone;
 
+    private DialogManager manager;
+
     void Start()
     {
         npcRigidbody = GetComponent<Rigidbody2D>();
         npcAnimator = GetComponent<Animator>();
+        manager = FindObjectOfType<DialogManager>();
         waitTimeCounter = waitTime;
         walkCounter = walkTime;
     }
 
     void Update()
     {
+        isTalking = manager.dialogActive;
+        
+        if(isTalking)
+        {
+            StopWalking();
+            return;
+        }
+
         if (isWalking)
         {
             npcRigidbody.velocity = walkingDirections[currentDirection] * npcSpeed;
