@@ -12,10 +12,19 @@ public class DialogManager : MonoBehaviour
     public string[] dialogLines;
     public int currentDialogLine;
 
+    public static DialogManager sharedInstace;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(sharedInstace == null)
+        {
+            sharedInstace = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -26,11 +35,11 @@ public class DialogManager : MonoBehaviour
             currentDialogLine++;
         }
 
-        if(currentDialogLine >= dialogLines.Length)
+        if(dialogActive && currentDialogLine >= dialogLines.Length)
         {
-            StartCoroutine(EndDialog());
+            HideDialog();
         }
-        else
+        else if(dialogLines.Length > 0)
         {
             dialogText.text = dialogLines[currentDialogLine];
         }
@@ -38,22 +47,26 @@ public class DialogManager : MonoBehaviour
 
     IEnumerator EndDialog()
     {
-        yield return new WaitForSeconds(0.3F);
-        HideDialog();
+        yield return new WaitForSeconds(0.1F);
         currentDialogLine = 0;
+        dialogActive = false;
     }
 
     public void ShowDialog(string[] lines)
     {
-        dialogActive = true;
+        Debug.Log("Se muestra el dialogo?");
         dialogBox.SetActive(true);
         currentDialogLine = 0;
         dialogLines = lines;
+        dialogActive = true;
+        Debug.Log(": " + dialogBox.activeInHierarchy);
     }
 
     public void HideDialog()
     {
-        dialogActive = false;
+        Debug.Log("Se cierra el dialogo");
+        //dialogActive = false;
         dialogBox.SetActive(false);
+        StartCoroutine(EndDialog());
     }
 }

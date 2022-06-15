@@ -5,13 +5,16 @@ using UnityEngine;
 public class NPCDialg : MonoBehaviour
 {
     public string[] dialog;
-    private DialogManager manager;
+    //private DialogManager manager;
     private bool playerInTheZone;
+
+    private float timeToNewDialog = 1;
+    private float newDialogCounter = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        manager = FindObjectOfType<DialogManager>();
+        //manager = FindObjectOfType<DialogManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,15 +30,15 @@ public class NPCDialg : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInTheZone = false;
-            manager.HideDialog();
+            DialogManager.sharedInstace.HideDialog();
         }
     }
 
     void Update()
     {
-        if(playerInTheZone && Input.GetKeyDown(KeyCode.Return) && !manager.dialogActive)
+        if(playerInTheZone && Input.GetKeyDown(KeyCode.Return) && !DialogManager.sharedInstace.dialogActive)
         {
-            manager.ShowDialog(dialog);
+            DialogManager.sharedInstace.ShowDialog(dialog);
             if(gameObject.GetComponentInParent<NPCMovement>() != null)
             {
                 gameObject.GetComponentInParent<NPCMovement>().isTalking = true;
