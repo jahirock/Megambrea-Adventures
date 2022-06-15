@@ -26,11 +26,14 @@ public class PlayerController : MonoBehaviour
     public static bool playerCreated;
     public string nextPlaceName;
 
+    private SFXManager sfxManager;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         playerRigidBody = GetComponent<Rigidbody2D>();
+        sfxManager = FindObjectOfType<SFXManager>();
 
         if(!playerCreated)
         {
@@ -54,6 +57,8 @@ public class PlayerController : MonoBehaviour
             attackingTimeCounter = attackingTime;
             playerRigidBody.velocity = Vector2.zero;
             animator.SetBool(attackingState, attacking);
+
+            sfxManager.playerAttack.Play();
         }
 
         if(attacking)

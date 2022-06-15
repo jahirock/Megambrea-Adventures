@@ -17,10 +17,13 @@ public class HealthManager : MonoBehaviour
 
     public string enemyName;
 
+    private SFXManager sfxManager;
+
     void Start()
     {
         currentHealth = maxHealth;
         characterRenderer = GetComponent<SpriteRenderer>();
+        sfxManager = FindObjectOfType<SFXManager>();
     }
 
     void Update()
@@ -68,6 +71,18 @@ public class HealthManager : MonoBehaviour
         {
             flashActive = true;
             flashCounter = flashLength;
+        }
+
+        if (gameObject.CompareTag("Player"))
+        {
+            if(currentHealth <= 0)
+            {
+                sfxManager.playerDead.Play();
+            }
+            else
+            {
+                sfxManager.playerHurt.Play();
+            }
         }
     }
 
