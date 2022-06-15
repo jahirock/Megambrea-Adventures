@@ -8,6 +8,8 @@ public class CharacterStats : MonoBehaviour
     public int currentExp;
     public int[] expToLevelUp;
 
+    public GameObject expParticles;
+
     public int[] hpLevels, strengthLevels, defenseLevels;
 
     private HealthManager healthManager;
@@ -32,6 +34,9 @@ public class CharacterStats : MonoBehaviour
             currentLevel++;
 
             healthManager.UpdateMaxHealth(hpLevels[currentLevel]);
+
+            expParticles.SetActive(true);
+            expParticles.GetComponent<ParticleSystem>().Play();
         }
     }
 

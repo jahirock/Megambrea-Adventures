@@ -5,15 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class QuestTrigger : MonoBehaviour
 {
-    //private QuestManager manager;
     public int questID;
     public bool startPoint, endPoint;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //manager = FindObjectOfType<QuestManager>();    
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

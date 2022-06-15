@@ -5,17 +5,7 @@ using UnityEngine;
 public class NPCDialg : MonoBehaviour
 {
     public string[] dialog;
-    //private DialogManager manager;
     private bool playerInTheZone;
-
-    private float timeToNewDialog = 1;
-    private float newDialogCounter = 0;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //manager = FindObjectOfType<DialogManager>();
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

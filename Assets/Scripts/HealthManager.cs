@@ -15,6 +15,8 @@ public class HealthManager : MonoBehaviour
 
     private SpriteRenderer characterRenderer;
 
+    public string enemyName;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -28,6 +30,8 @@ public class HealthManager : MonoBehaviour
             if(gameObject.CompareTag("Enemy"))
             {
                 GameObject.Find("Player").GetComponent<CharacterStats>().AddExperience(expWhenDefeated);
+
+                QuestManager.sharedInstance.enemyKilled = enemyName;
             }
 
             gameObject.SetActive(false);

@@ -295,9 +295,9 @@ GameObject:
   - component: {fileID: 6539217252522358908}
   - component: {fileID: 6539217252522358907}
   - component: {fileID: 3665377467581585325}
+  - component: {fileID: 8072640905611829273}
   - component: {fileID: 6539217252522358909}
   - component: {fileID: 6539217252522358910}
-  - component: {fileID: 8072640905611829273}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -319,6 +319,7 @@ Transform:
   m_Children:
   - {fileID: 695319179}
   - {fileID: 299323680}
+  - {fileID: 3260669474201964780}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -433,6 +434,25 @@ MonoBehaviour:
   flashActive: 0
   flashLength: 1
   expWhenDefeated: 0
+--- !u!114 &8072640905611829273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6539217252522358904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e45a171335c784cae70082f43dc371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLevel: 1
+  currentExp: 0
+  expToLevelUp: 000000000a000000140000003200000064000000c8000000f4010000e8030000d007000088130000
+  expParticles: {fileID: 3520334590524492230}
+  hpLevels: 64000000dc000000f0000000130100002c010000450100006801000090010000c2010000f4010000
+  strengthLevels: 00000000000000000100000002000000020000000300000003000000030000000500000006000000
+  defenseLevels: 00000000010000000100000002000000020000000200000003000000030000000300000005000000
 --- !u!95 &6539217252522358909
 Animator:
   serializedVersion: 4
@@ -474,21 +494,78 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8072640905611829273
-MonoBehaviour:
+--- !u!1001 &8552314741687640372
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6539217252522358906}
+    m_Modifications:
+    - target: {fileID: 1042305479993177739, guid: 4a30cf4a740d0ea47bfb9e562a72eced, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077053604588382450, guid: 4a30cf4a740d0ea47bfb9e562a72eced, type: 3}
+      propertyPath: m_Name
+      value: ExpParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077053604588382450, guid: 4a30cf4a740d0ea47bfb9e562a72eced, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624748246959157720, guid: 4a30cf4a740d0ea47bfb9e562a72eced, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624748246959157720, guid: 4a30cf4a740d0ea47bfb9e562a72eced, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624748246959157720, guid: 4a30cf4a740d0ea47bfb9e562a72eced, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624748246959157720, guid: 4a30cf4a740d0ea47bfb9e562a72eced, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624748246959157720, guid: 4a30cf4a740d0ea47bfb9e562a72eced, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624748246959157720, guid: 4a30cf4a740d0ea47bfb9e562a72eced, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624748246959157720, guid: 4a30cf4a740d0ea47bfb9e562a72eced, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624748246959157720, guid: 4a30cf4a740d0ea47bfb9e562a72eced, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624748246959157720, guid: 4a30cf4a740d0ea47bfb9e562a72eced, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624748246959157720, guid: 4a30cf4a740d0ea47bfb9e562a72eced, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624748246959157720, guid: 4a30cf4a740d0ea47bfb9e562a72eced, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a30cf4a740d0ea47bfb9e562a72eced, type: 3}
+--- !u!4 &3260669474201964780 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6624748246959157720, guid: 4a30cf4a740d0ea47bfb9e562a72eced, type: 3}
+  m_PrefabInstance: {fileID: 8552314741687640372}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6539217252522358904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0e45a171335c784cae70082f43dc371, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentLevel: 0
-  currentExp: 0
-  expToLevelUp: 000000000a000000140000003200000064000000c8000000f4010000e8030000d007000088130000
-  hpLevels: 64000000dc000000f0000000130100002c010000450100006801000090010000c2010000f4010000
-  strengthLevels: 00000000000000000100000002000000020000000300000003000000030000000500000006000000
-  defenseLevels: 00000000010000000100000002000000020000000200000003000000030000000300000005000000
+--- !u!1 &3520334590524492230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5077053604588382450, guid: 4a30cf4a740d0ea47bfb9e562a72eced, type: 3}
+  m_PrefabInstance: {fileID: 8552314741687640372}
+  m_PrefabAsset: {fileID: 0}

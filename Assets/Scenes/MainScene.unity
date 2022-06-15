@@ -32175,8 +32175,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questID: 1
-  startText: 
-  completeText: 
+  startText: Consigue la campana
+  completeText: Conseguiste la campana, ALV!.
+  experience: 30
+  needsItem: 1
+  itemNeeded: Campana Chida
+  needsEnemy: 0
+  enemyName: 
+  numberOfEnemies: 0
 --- !u!1001 &141200969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32662,6 +32668,80 @@ Transform:
   - {fileID: 2139325509}
   m_Father: {fileID: 0}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &511624473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 511624476}
+  - component: {fileID: 511624475}
+  - component: {fileID: 511624474}
+  m_Layer: 5
+  m_Name: Quest2Start
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &511624474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511624473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1ff91eaf946e7458272a0eeee0123d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questID: 2
+  startPoint: 1
+  endPoint: 0
+--- !u!61 &511624475
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511624473}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &511624476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511624473}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.93, y: 0.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &611001559 stripped
 Transform:
@@ -36518,8 +36598,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questID: 2
-  startText: 
-  completeText: 
+  startText: Mata 5 megambreas
+  completeText: Mataste a 5 megambreas
+  experience: 50
+  needsItem: 0
+  itemNeeded: 
+  needsEnemy: 1
+  enemyName: Megambrea
+  numberOfEnemies: 5
 --- !u!1 &1145753745
 GameObject:
   m_ObjectHideFlags: 0
@@ -36971,6 +37057,8 @@ MonoBehaviour:
   - {fileID: 50287833}
   - {fileID: 1049590247}
   questCompleted: 
+  itemCollected: 
+  enemyKilled: 
 --- !u!1 &1412703662
 GameObject:
   m_ObjectHideFlags: 0
@@ -37806,7 +37894,7 @@ GameObject:
   m_Layer: 5
   m_Name: Quest0Start
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -37865,6 +37953,80 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1645742485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1645742488}
+  - component: {fileID: 1645742487}
+  - component: {fileID: 1645742486}
+  m_Layer: 5
+  m_Name: Quest1Start
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1645742486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645742485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1ff91eaf946e7458272a0eeee0123d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questID: 1
+  startPoint: 1
+  endPoint: 0
+--- !u!61 &1645742487
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645742485}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &1645742488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645742485}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.93, y: 6.04, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1659629911 stripped
 Transform:
@@ -38236,80 +38398,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829562245}
   m_CullTransparentMesh: 1
---- !u!1 &1882231389
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1882231392}
-  - component: {fileID: 1882231391}
-  - component: {fileID: 1882231390}
-  m_Layer: 5
-  m_Name: Quest0End
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1882231390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1882231389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d1ff91eaf946e7458272a0eeee0123d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questID: 0
-  startPoint: 0
-  endPoint: 1
---- !u!61 &1882231391
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1882231389}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!4 &1882231392
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1882231389}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.3499756, y: 0.52001953, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1909413854
 GameObject:
   m_ObjectHideFlags: 0
@@ -38442,6 +38530,12 @@ MonoBehaviour:
   questID: 0
   startText: Entra a la mina
   completeText: Entraste en la mina
+  experience: 10
+  needsItem: 0
+  itemNeeded: 
+  needsEnemy: 0
+  enemyName: 
+  numberOfEnemies: 0
 --- !u!1 &1993910984 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6539217252522358904, guid: a9d2a91217ef9804eb6e266b27e6c435, type: 3}
@@ -40309,6 +40403,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3520334590524492230, guid: a9d2a91217ef9804eb6e266b27e6c435, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6539217252522358904, guid: a9d2a91217ef9804eb6e266b27e6c435, type: 3}
       propertyPath: m_Name
       value: Player
@@ -40319,11 +40417,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6539217252522358906, guid: a9d2a91217ef9804eb6e266b27e6c435, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.52
+      value: 10.22
       objectReference: {fileID: 0}
     - target: {fileID: 6539217252522358906, guid: a9d2a91217ef9804eb6e266b27e6c435, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.21
+      value: -2.09
       objectReference: {fileID: 0}
     - target: {fileID: 6539217252522358906, guid: a9d2a91217ef9804eb6e266b27e6c435, type: 3}
       propertyPath: m_LocalPosition.z

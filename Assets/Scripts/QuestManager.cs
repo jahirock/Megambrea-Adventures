@@ -6,8 +6,9 @@ public class QuestManager : MonoBehaviour
 {
     public Quest[] quests;
     public bool[] questCompleted;
+    public string itemCollected;
 
-    //private DialogManager manager;
+    public string enemyKilled;
 
     public static QuestManager sharedInstance;
 
@@ -24,13 +25,6 @@ public class QuestManager : MonoBehaviour
         }
 
         questCompleted = new bool[quests.Length];
-        //manager = FindObjectOfType<DialogManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void ShowQuestText(string questText)

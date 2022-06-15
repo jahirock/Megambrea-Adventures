@@ -5,20 +5,36 @@ using UnityEngine;
 public class Quest : MonoBehaviour
 {
     public int questID;
-    //private QuestManager manager;
 
     public string startText, completeText;
+    public int experience;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //manager = FindObjectOfType<QuestManager>();
-    }
+    public bool needsItem;
+    public string itemNeeded;
+
+    public bool needsEnemy;
+    public string enemyName;
+    public int numberOfEnemies;
+    private int enemiesKilled;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(needsItem && QuestManager.sharedInstance.itemCollected.Equals(itemNeeded))
+        {
+            QuestManager.sharedInstance.itemCollected = null;
+            CompleteQuest();
+        }
+
+        if(needsEnemy && QuestManager.sharedInstance.enemyKilled.Equals(enemyName))
+        {
+            QuestManager.sharedInstance.enemyKilled = "";
+            enemiesKilled++;
+            if(enemiesKilled >= numberOfEnemies)
+            {
+                CompleteQuest();
+            }
+        }
     }
 
     public void StartQuest()
@@ -31,5 +47,6 @@ public class Quest : MonoBehaviour
         QuestManager.sharedInstance.ShowQuestText(completeText);
         QuestManager.sharedInstance.questCompleted[questID] = true;
         gameObject.SetActive(false);
+        GameObject.Find("Player").GetComponent<CharacterStats>().AddExperience(experience);
     }
 }
